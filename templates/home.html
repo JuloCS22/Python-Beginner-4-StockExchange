@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StockExchange</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='site.css') }}>
+</head>
+<body>
+    <h1>StockExchange</h1>
+    <h2>V 2.0</h2>
+
+    <form action="" method="post">
+        <label for="search_symbol">
+            <input type="text" id="search_symbol" name="search_symbol" placeholder="Enter stock research"/>
+        </label>
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="" method="post">
+        <div class="buttons">
+        {% if symbols %}
+        {% for symbol in symbols['bestMatches'] %}
+            <button class="symbol_button" type="submit" id="selected_symbol" name="selected_symbol" value={{ symbol['1. symbol'] }}
+                >{{ symbol['2. name'] }} <br />
+                <span class="symbol_region">{{ symbol['4. region'] }}</span>
+            </button>
+        {% endfor %}
+        {% endif %}
+        </div>
+    </form>
+
+    {% if present_symbol %}
+    <p>{{ present_symbol | safe }}</p>
+    {% endif %}
+
+    {% if plot_url %}
+    <div class="symbol_display">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="symbol_display">
+    </div>
+    {% endif %}
+
+    <p>{{ error }}</p>
+    <p class="copyright">Powered by the Free version of the Alphavantage API. <br>
+        Only "Intraday" data is used due to strict limitations on API requests.
+    </p>
+</body>
+</html>

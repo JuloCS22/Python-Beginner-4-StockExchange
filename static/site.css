@@ -1,0 +1,74 @@
+body {
+    font-family: Verdana, serif;
+    padding: 5%;
+}
+
+h2 {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    color: #F18435;
+    font-size: small;
+}
+
+button {
+    padding: 10px;
+    background-color: #414042;
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    transition: background-color 0.1s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #EFCDAE;
+}
+
+.symbol_region {
+    font-style: italic;
+    font-size: 75%;
+}
+
+.symbol_button {
+
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+form {
+    text-align: center;
+}
+
+.symbol_display {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.symbol_button {
+    text-align: center;
+    height: auto;
+    width: 150px;
+    margin-top: 5%;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 75%;
+    font-style: italic;
+    color: #414042;
+}
+
+.span_info {
+    color: #F18435;
+}
